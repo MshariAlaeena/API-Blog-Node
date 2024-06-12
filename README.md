@@ -1,5 +1,3 @@
-Here's a README template for your project that provides an overview and guides on how to set up and use the API and server:
-
 # API Blog Application
 
 This repository contains a simple blog API and a server that serves a front-end for interacting with the API. The API allows users to create, read, update, and delete blog posts. The front-end provides an interface for these actions.
