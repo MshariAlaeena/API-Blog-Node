@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 4000;
 
-// In-memory data store
+// initially In-memory data store (i hope that i dont forget ) 
 let posts = [
   {
     id: 1,
@@ -40,11 +40,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Write your code here//
 
-//CHALLENGE 1: GET All posts
+//GET All posts
 app.get("/posts", (req, res) => {
   res.json(posts);
 });
-//CHALLENGE 2: GET a specific post by id
+//GET a specific post by id
 app.get("/posts/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const post = posts.find(post => post.id == id);
@@ -54,7 +54,7 @@ app.get("/posts/:id", (req, res) => {
     res.status(404).json({ message: "Post not found!" });
   }
 });
-//CHALLENGE 3: POST a new post
+//POST a new post
 app.post("/posts", (req, res) => {
   const id = lastId + 1;
   lastId++;
@@ -68,7 +68,7 @@ app.post("/posts", (req, res) => {
   posts.push(post);
   res.status(200).json(post);
 });
-//CHALLENGE 4: PATCH a post when you just want to update one parameter
+//PATCH a post when you just want to update one parameter
 app.patch("/posts/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const existingPost = posts.find(post => post.id === id);
@@ -81,7 +81,7 @@ app.patch("/posts/:id", (req, res) => {
     res.status(404).json({ message: "Post not Found!" });
   }
 });
-//CHALLENGE 5: DELETE a specific post by providing the post id.
+//DELETE a specific post by providing the post id.
 app.delete("/posts/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const index = posts.findIndex(post => post.id === id);
