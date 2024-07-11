@@ -29,8 +29,8 @@ npm -v
 1. Clone the repository:
 
 ```bash
-git clone [URL to the GitHub repository]
-cd [repository name]
+git clone https://github.com/MshariAlaeena/API-Blog-Node
+cd API-Blog-Node
 ```
 
 2. Install dependencies:
